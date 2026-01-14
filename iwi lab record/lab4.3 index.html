@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listeners</title>
+</head>
+<body>
+
+<button id="btn">Click Me</button>
+<p id="output"></p>
+
+<script>
+    function showMessage() {
+        document.getElementById("output").innerHTML = "Button Clicked!";
+    }
+
+    var button = document.getElementById("btn");
+    button.addEventListener("click", showMessage);
+
+    // Keyboard event
+    document.addEventListener("keydown", function() {
+        document.getElementById("output").innerHTML = "Key Pressed!";
+    });
+</script>
+
+</body>
+</html>

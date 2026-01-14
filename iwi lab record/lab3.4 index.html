@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+
+            if (name == "") {
+                alert("Name must not be empty");
+                return false;
+            }
+            alert("Form submitted successfully");
+            return true;
+        }
+
+        function checkInput() {
+            var name = document.getElementById("name").value;
+            if (name.length < 3) {
+                document.getElementById("msg").innerHTML = "Minimum 3 characters required";
+            } else {
+                document.getElementById("msg").innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    Name: <input type="text" id="name" oninput="checkInput()"><br>
+    <span id="msg" style="color:red"></span><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
